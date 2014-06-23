@@ -23,10 +23,11 @@ do
   mv -v /backup/self/$src /backup/self/$dest
 done
 
-rsync -a -H --delete    \
+rsync -a -H --delete --xattrs \
 --exclude=/backup/      \
 --exclude=/dev/         \
 --exclude=/proc/        \
+--exclude=/selinux/     \
 --exclude=/sys/         \
 --exclude=/swapfile             \
 --link-dest=/backup/self/2   \
