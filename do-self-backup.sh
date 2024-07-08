@@ -34,6 +34,7 @@ rsync -a -H --delete --xattrs \
 --exclude=/proc/ \
 --exclude=/run/ \
 --exclude=/sys/ \
+--exclude=/var/lib/docker/devicemapper/devicemapper/ \
 --link-dest=/backup/self/02 \
 / /backup/self/01
 
