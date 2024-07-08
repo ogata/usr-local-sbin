@@ -24,14 +24,15 @@ do
 done
 
 rsync -a -H --delete --xattrs \
---exclude=/backup/      \
---exclude=/dev/         \
---exclude=/proc/        \
---exclude=/selinux/     \
---exclude=/sys/         \
---exclude=/swapfile             \
---link-dest=/backup/self/2   \
-/    /backup/self/1
+--exclude=/backup/ \
+--exclude=/dev/ \
+--exclude=/media/ \
+--exclude=/mnt/ \
+--exclude=/proc/ \
+--exclude=/run/ \
+--exclude=/sys/ \
+--link-dest=/backup/self/2 \
+/ /backup/self/1
 
 touch /backup/self/1
 
